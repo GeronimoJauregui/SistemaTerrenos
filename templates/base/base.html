@@ -1,0 +1,247 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="us">
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Responsive Admin Template" />
+        <meta name="author" content="Smart" />
+        <title>PLANTACIONES | TERRENOS</title>
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="{% static 'base/plugins/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'base/fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+        <!--bootstrap -->
+        <link href="{% static 'base/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/plugins/summernote/summernote.css' %}" rel="stylesheet">
+        <!-- Material Design Lite CSS -->
+        <link rel="stylesheet" href="{% static 'base/plugins/material/material.min.css' %}">
+        <link rel="stylesheet" href="{% static 'base/css/material_style.css' %}">
+        <!-- animation -->
+        <link href="{% static 'base/css/pages/animate_page.css' %}" rel="stylesheet">
+        <!-- inbox style -->
+        <link href="{% static 'base/css/pages/inbox.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Theme Styles -->
+        <link href="{% static 'base/css/style.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/css/styles.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/css/pages/formlayout.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	    <link href="{% static 'base/css/theme-color.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'base/plugins/sweet-alert/sweetalert.min.css' %}" rel="stylesheet" />
+
+
+        <!-- Data Tables -->
+        <link href="{% static 'base/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css"/>
+        
+        <!-- Date Time item CSS -->
+        <link rel="stylesheet" href="{% static 'base/plugins/material-datetimepicker/bootstrap-material-datetimepicker.css' %}" />
+
+        <!-- favicon -->
+        <!--<link rel="shortcut icon" href="assets/img/logicon.jpg" /> -->
+    </head>
+    <!-- END HEAD -->
+    <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-blue white-sidebar-color logo-white">
+        <div class="page-wrapper">
+            <!-- start header -->
+            <div class="page-header navbar navbar-fixed-top">
+                <div class="page-header-inner ">
+                    <!-- logo start -->
+                    <div class="page-logo elevation-4 size">
+                        <a href="{% url 'bases:home' %}">
+                            <img alt="" src="{% static 'base/img/logo.svg' %}">
+                            <span class="logo-default" >Plantaciones</span> 
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                    <ul class="nav navbar-nav navbar-left in">
+                        <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+                    </ul>                    
+                    <!-- start mobile menu -->
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span></span>
+                    </a>
+                    <!-- end mobile menu -->
+                    <!-- start header menu -->
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+                            <!-- start notification dropdown -->
+                            <!-- start manage user dropdown -->
+                            <li class="dropdown dropdown-user">                                
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <span class="username username-hide-on-mobile"> Opciones </span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-default animated jello">                                    
+                                    <li>
+                                        <a href="Logout">
+                                            <i class="icon-logout"></i> Salir </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end manage user dropdown -->                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end header -->
+            <!-- start page container -->
+            <div class="page-container">
+                <!-- start sidebar menu -->
+                <div class="sidebar-container">
+                    <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+                        <div id="remove-scroll">
+                            <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                                <li class="sidebar-toggler-wrapper hide">
+                                    <div class="sidebar-toggler">
+                                        <span></span>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'bases:inicio' %}" class="nav-link nav-toggle"> <i class="material-icons">home</i>
+                                        <span class="title">Inicio</span> 
+                                    </a>
+                                </li>
+                                <li class="nav-item start">
+                                    
+                                    <a href="#" class="nav-link nav-toggle">
+                                        <i class="material-icons">terrain</i>
+                                        <span class="title">Terrenos</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a id="academicos_datosgenerales" class="nav-link ">
+                                                <span class="title">Huerto</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a id="academicos_EE" class="nav-link ">
+                                                <span class="title">La granja</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a id="academicos_pafis" class="nav-link ">
+                                                <span class="title">Las cabañas</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a id="academicos_pafis" class="nav-link ">
+                                                <span class="title">Columpio</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a id="academicos_pafis" class="nav-link ">
+                                                <span class="title">Cerro</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a id="academicos_pafis" class="nav-link ">
+                                                <span class="title">Lichal</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item start ">
+                                    <a href="#" class="nav-link nav-toggle">
+                                        <i class="material-icons">nature</i>
+                                        <span class="title">Catalogos</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item ">
+                                            <a id="infogeneral" class="nav-link ">
+                                                <span class="title">Arboles</span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>                            
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end sidebar menu --> 
+                <!-- start page content -->
+                
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        {% block page_content %}
+                        <div></div>
+                        {% endblock %}
+                    </div>
+                </div>
+                <!-- end page content -->
+                
+            </div>
+            <!-- end page container -->
+            <!-- start footer -->
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2020 &copy; land system
+                    <a href="mailto:jauregui_mtz97@icloud.com" target="_top" class="makerCss">Información</a>
+                </div>
+            </div>
+            <!-- end footer -->
+        </div>
+        <!-- start js include path -->
+        <script src="{% static 'base/plugins/jquery/jquery.min.js' %}" ></script>        
+        <script src="{% static 'base/plugins/popper/popper.min.js' %}" ></script>
+        <script src="{% static 'base/plugins/jquery-blockui/jquery.blockui.min.js' %}" ></script>
+        <script src="{% static 'base/plugins/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+        <!-- bootstrap -->
+        <script src="{% static 'base/plugins/bootstrap/js/bootstrap.min.js' %}" ></script>
+        <script src="{% static 'base/plugins/sparkline/jquery.sparkline.min.js' %}" ></script>
+        <script src="{% static 'base/js/pages/sparkline/sparkline-data.js' %}" ></script>
+        <script src="{% static 'base/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js' %}" ></script>
+        <script src="{% static 'base/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js' %}"  charset="UTF-8"></script>
+        <script src="{% static 'base/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker-init.js' %}"  charset="UTF-8"></script>
+
+        <script src="{% static 'base/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js' %}"  charset="UTF-8"></script>
+        <script src="{% static 'base/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js' %}"  charset="UTF-8"></script>
+        <!-- Common js-->
+        <script src="{% static 'base/js/app.js' %}" ></script>
+        <script src="{% static 'base/js/layout.js' %}" ></script>
+        <script src="{% static 'base/js/theme-color.js' %}" ></script>
+        <!-- material -->
+        <script src="{% static 'base/plugins/material/material.min.js' %}"></script>
+        <!-- animation -->
+        <script src="{% static 'base/js/pages/ui/animations.js' %}" ></script>
+        <script src="{% static 'base/js/pages/material_select/getmdl-select.js' %}" ></script>
+        <script  src="{% static 'base/plugins/material-datetimepicker/moment-with-locales.min.js' %}"></script>
+	    <script  src="{% static 'base/plugins/material-datetimepicker/bootstrap-material-datetimepicker.js' %}"></script>
+	    <script  src="{% static 'base/plugins/material-datetimepicker/datetimepicker.js' %}"></script>
+
+        <!-- chart js -->
+        <script src="{% static 'base/plugins/chart-js/Chart.bundle.js' %}" ></script>
+        <script src="{% static 'base/plugins/chart-js/utils.js' %}" ></script>
+        <script src="{% static 'base/js/pages/chart/chartjs/home-data.js' %}" ></script>
+        <!--Alerts-->
+        <script src="{% static 'base/plugins/sweet-alert/sweetalert.min.js' %}" ></script>
+        <script src="{% static 'base/js/pages/sweet-alert/sweet-alert-data.js' %}" ></script>
+
+        
+        <!-- summernote -->
+        <script src="{% static 'base/plugins/summernote/summernote.min.js' %}" ></script>
+        <script src="{% static 'base/js/pages/summernote/summernote-data.js' %}" ></script>
+        
+        
+        <!-- data tables -->
+        <script src="{% static 'base/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+ 	    <script src="{% static 'base/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js' %}" ></script>
+        <script src="{% static 'base/js/pages/table/table_data.js' %}" ></script>
+        <!-- dropzone -->
+        <script src="{% static 'base/plugins/dropzone/dropzone.js' %}" ></script>
+        <!--tags input-->
+        <script src="{% static 'base/plugins/jquery-tags-input/jquery-tags-input.js' %}" ></script>
+        <script src="{% static 'base/plugins/jquery-tags-input/jquery-tags-input-init.js' %}" ></script>
+        <!--select2-->
+        <script src="{% static 'base/plugins/select2/js/select2.js' %}" ></script>
+        <script src="{% static 'base/js/pages/select2/select2-init.js' %}" ></script>
+        <script src="{% static 'base/js/jquery-form.js' %}" ></script>
+        <!-- end js include path -->
+    </body>
+</html>
